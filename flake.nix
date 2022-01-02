@@ -17,6 +17,12 @@
     in
     {
       devShell.x86_64-linux =
-        pkgs.mkShell { buildInputs = [ pkgs.zig ]; };
+        pkgs.mkShell {
+          buildInputs = with pkgs;[
+            nixpkgs-fmt
+            zig
+            zls
+          ];
+        };
     };
 }
